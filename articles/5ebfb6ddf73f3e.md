@@ -28,6 +28,9 @@ WebRTC プロトコルとは、双方向の安全にかつ、実際の通信を�
 WebRTC API は開発者が WebRTC プロトコルを使用するためのものであり、JavaScript のみで規定されています。
 ただ、JavaScript 以外の言語でも WebRTC プロトコルであれば利用することができます。
 
+<!--
+似たような関係として、HTTP と fetch API があります。プロトコルとしての WebRTC が HTTP で、API としての WebRTC が fetch API となります。 -->
+
 下記の、ドキュメントでそれぞれ管理されています。
 
 - [WebRTC プロトコル（IETF rtcweb）](https://datatracker.ietf.org/wg/rtcweb/documents/)
@@ -52,6 +55,25 @@ WebRTC API は開発者が WebRTC プロトコルを使用するためのもの�
 - LINE
 
 VoIP/VoLTE という技術を使って映像・音声通話を行なっていた。
+
+### WebRTC の通信までの流れ
+
+大きく分けて下記のステップに分けて説明します。
+
+1. シグナリング
+1. 接続
+1. セキュリティ
+1. 通信
+
+### シグナリング
+
+WebRTC では、Peer-to-Peer（以降、P2P と呼ぶ）通信を始める前に、お互いの情報を交換するため、シグナリングと呼ばれる処理を行う必要があります。
+
+P2P とはネットワークに繋がれた
+
+シグナリングはシグナリングサーバーに
+
+![P2P](/images/5ebfb6ddf73f3e/P2P.drawio.png)
 
 ### TCP/IP
 
