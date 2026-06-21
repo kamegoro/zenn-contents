@@ -1,0 +1,56 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="bdd-vs-claudetest" name="BDD vs claude-test">
+    <mxGraphModel dx="1100" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="420" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- BDD side -->
+        <mxCell id="bdd-group" value="BDD（Gherkin）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="440" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="PO が Gherkin で&lt;br&gt;仕様を書く" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=0;" vertex="1" parent="bdd-group">
+          <mxGeometry x="140" y="50" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="エンジニアが&lt;br&gt;ステップ実装を書く" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" vertex="1" parent="bdd-group">
+          <mxGeometry x="140" y="150" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="Playwright が実行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=0;" vertex="1" parent="bdd-group">
+          <mxGeometry x="140" y="250" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ba1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=1.5;strokeColor=#545B64;" edge="1" source="b1" target="b2" parent="bdd-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ba2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=1.5;strokeColor=#545B64;" edge="1" source="b2" target="b3" parent="bdd-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b2-note" value="← ここがボトルネック" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#b85450;fontStyle=1;" vertex="1" parent="bdd-group">
+          <mxGeometry x="310" y="165" width="130" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- claude-test side -->
+        <mxCell id="ct-group" value="claude-test" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=5;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="20" width="440" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="誰かが YAML で&lt;br&gt;手順を書く" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=0;" vertex="1" parent="ct-group">
+          <mxGeometry x="140" y="50" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="AI がステップを解釈" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="ct-group">
+          <mxGeometry x="140" y="150" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="Playwright MCP が実行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=0;" vertex="1" parent="ct-group">
+          <mxGeometry x="140" y="250" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ca1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=1.5;strokeColor=#545B64;" edge="1" source="c1" target="c2" parent="ct-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ca2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=1.5;strokeColor=#545B64;" edge="1" source="c2" target="c3" parent="ct-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-note" value="← AI が代替" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="ct-group">
+          <mxGeometry x="310" y="165" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="step-sequence" name="Step Sequence">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="520" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Lifelines -->
+        <mxCell id="yaml-head" value="YAML ステップ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="claude-head" value="Claude Code" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pw-head" value="Playwright MCP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="20" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="browser-head" value="ブラウザ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="20" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Lifeline bars -->
+        <mxCell id="yaml-line" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="60" as="sourcePoint" />
+            <mxPoint x="100" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="claude-line" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="60" as="sourcePoint" />
+            <mxPoint x="310" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pw-line" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="60" as="sourcePoint" />
+            <mxPoint x="545" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="browser-line" style="endArrow=none;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775" y="60" as="sourcePoint" />
+            <mxPoint x="775" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Messages -->
+        <!-- 1. YAML → Claude: step text -->
+        <mxCell id="m1" value="「お名前フィールドに入力する」" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#545B64;fontSize=10;exitX=1;exitY=0;entryX=0;entryY=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="90" as="sourcePoint" />
+            <mxPoint x="310" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 2. Claude → Playwright: get snapshot -->
+        <mxCell id="m2" value="スナップショット取得" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="130" as="sourcePoint" />
+            <mxPoint x="545" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 3. Playwright → Browser: get a11y tree -->
+        <mxCell id="m3" value="アクセシビリティツリー取得" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#9673a6;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="170" as="sourcePoint" />
+            <mxPoint x="775" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 4. Browser → Playwright: elements + ref_id -->
+        <mxCell id="m4" value="要素一覧 + ref_id" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#82b366;fontSize=10;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775" y="210" as="sourcePoint" />
+            <mxPoint x="545" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 5. Playwright → Claude: snapshot data -->
+        <mxCell id="m5" value="スナップショット返却" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;fontSize=10;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="250" as="sourcePoint" />
+            <mxPoint x="310" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 6. Claude self: reasoning -->
+        <mxCell id="m6" value="自然言語 → ref_id を推論" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="270" width="160" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 7. Claude → Playwright: operate by ref_id -->
+        <mxCell id="m7" value="ref_id で要素を操作" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="330" as="sourcePoint" />
+            <mxPoint x="545" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 8. Playwright → Browser: fill field -->
+        <mxCell id="m8" value="フィールドに値を入力" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#9673a6;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="370" as="sourcePoint" />
+            <mxPoint x="775" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 9. Browser → Playwright: done -->
+        <mxCell id="m9" value="操作完了" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#82b366;fontSize=10;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775" y="410" as="sourcePoint" />
+            <mxPoint x="545" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 10. Playwright → Claude: result -->
+        <mxCell id="m10" value="結果返却" style="edgeStyle=none;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;fontSize=10;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="450" as="sourcePoint" />
+            <mxPoint x="310" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Bracket: "This repeats per step" -->
+        <mxCell id="bracket-note" value="← これが1ステップごとに繰り返される" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="460" width="280" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

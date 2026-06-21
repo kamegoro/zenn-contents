@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="test-pyramid" name="Test Pyramid">
+    <mxGraphModel dx="900" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="400" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- E2E (top, smallest) -->
+        <mxCell id="e2e" value="E2E（10%）" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=40;fontSize=14;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="250" y="30" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e2e-label" value="遅い・高コスト・壊れやすい" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=11;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="310" y="90" width="170" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Integration (middle) -->
+        <mxCell id="integration" value="統合テスト（20%）" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=50;fontSize=14;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="190" y="130" width="420" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Unit (bottom, largest) -->
+        <mxCell id="unit" value="ユニットテスト（70%）" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=60;fontSize=14;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="110" y="230" width="580" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="unit-label" value="速い・低コスト・安定" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=11;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="320" y="290" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow -->
+        <mxCell id="arrow" value="" style="endArrow=classic;startArrow=none;html=1;strokeWidth=1.5;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="290" as="sourcePoint" />
+            <mxPoint x="730" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-label" value="コスト・不安定さ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=10;fontColor=#666666;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="720" y="140" width="110" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
