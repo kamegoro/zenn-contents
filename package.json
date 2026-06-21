@@ -1,17 +1,19 @@
 {
   "name": "zenn-contents",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "zenn:article": "npx zenn new:article",
-    "zenn:preview": "npx zenn preview"
+    "new:article": "zenn new:article",
+    "preview": "zenn preview",
+    "lint": "textlint 'articles/**/*.md'",
+    "lint:fix": "textlint --fix 'articles/**/*.md'"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
-    "zenn-cli": "^0.1.154"
+    "zenn-cli": "^0.5.1"
+  },
+  "devDependencies": {
+    "textlint": "^15.7.1",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2",
+    "textlint-rule-preset-japanese": "^10.0.4"
   }
 }

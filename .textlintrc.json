@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "preset-ja-technical-writing": {
+      "sentence-length": {
+        "max": 150
+      },
+      "no-exclamation-question-mark": false,
+      "ja-no-weak-phrase": false,
+      "no-mix-dearu-desumasu": false,
+      "ja-no-mixed-period": false,
+      "no-doubled-joshi": true,
+      "ja-no-redundant-expression": true,
+      "arabic-kanji-numbers": true
+    },
+    "preset-japanese": {
+      "sentence-length": {
+        "max": 150
+      },
+      "no-doubled-conjunction": true,
+      "no-dropping-the-ra": true
+    }
+  }
+}
