@@ -4,7 +4,7 @@ Zenn の記事管理リポジトリ。GitHub 連携で `published: true` の記�
 
 ## 技術スタック
 
-- zenn-cli 0.5.1 (Node 22)
+- zenn-cli 0.5.15 (Node 22)
 - textlint: preset-ja-technical-writing + preset-japanese
 - CI: GitHub Actions で articles/** 変更時に textlint 実行
 

@@ -17,5 +17,8 @@
     "textlint": "^15.7.1",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2",
     "textlint-rule-preset-japanese": "^10.0.4"
+  },
+  "overrides": {
+    "glob": "^14.0.6"
   }
 }
