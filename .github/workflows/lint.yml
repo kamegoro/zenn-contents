@@ -6,9 +6,17 @@ on:
       - main
     paths:
       - "articles/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".textlintrc.json"
+      - ".github/workflows/lint.yml"
   pull_request:
     paths:
       - "articles/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".textlintrc.json"
+      - ".github/workflows/lint.yml"
 
 permissions:
   contents: read

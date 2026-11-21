@@ -37,4 +37,4 @@ npm run lint:fix
 
 ## CI
 
-`articles/` 配下のファイルが変更された PR / push で textlint が自動実行されます。
+`articles/` 配下のファイル、依存関係 (`package.json` / `package-lock.json`)、textlint 設定、ワークフロー自体が変更された PR / push で textlint が自動実行されます。
